@@ -39,6 +39,14 @@
     font-size: 24px;
 }
 
+.karla-white-regular {
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFFFFF;
+    font-size: 24px;
+}
+
 .karla-black-light {
     font-family: "Karla", sans-serif;
     font-weight: 320;
@@ -48,6 +56,15 @@
     padding-top: 2px;
     padding-bottom: 2px;
     margin: 0;
+}
+
+.karla-link {
+    font-family: "Karla", sans-serif;
+    font-weight: 320;
+    font-style: normal;
+    color: #3784F9;
+    font-size: 20px;
+    text-decoration: underline;
 }
 
 /* Body */
@@ -119,6 +136,24 @@
     cursor: pointer;
 }
 
+.menu_icon{
+    display: none;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.menu_icon:hover{
+    cursor: pointer;
+}
+
+.menu_icon_bar{
+    width: 35px;
+    height: 5px;
+    background-color: #FFFFFF;
+    margin-top: 20px;
+}
+
 /* Rest of page (Everything but the top bar)*/
 
 .bottom_half_div{
@@ -130,43 +165,102 @@
     padding-top: 2%;
 }
 
-/*Intro and Hours Section*/
+/*Intro and Hours/Appointment Section*/
 
 #main_intro_text{
+    margin-top: 2%;
     margin-bottom: 1%;
 }
 
 #sub_intro_text{
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 #hours_text{
-    margin-bottom: 15px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.hours_and_buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    float: left;
+    width: 100%;
+}
+
+.hours_and_appointment_section{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 50px;
+
+}
+
+.appointment_section{
+    width: 100%;
+}
+
+.hours_section{
+    width: 270px;
+    padding-right: 1px;
+    margin-right: 50px;
+}
+
+.card_button_appointment{
+    background-color: #3784F9;
+    float: right;
+
+
+    font-size: 36px;
+    color: #FFFFFF;
+    text-align: center;
+
+    border-radius: 15px;
+    width: 49%;
+    height: 250px;
+    border-color: #3784F9;
+
+    box-shadow: -10px 10px rgba(0, 0, 0, 0.233);
+
+    cursor: pointer;
+}
+
+.card_button_appointment:hover{
+    background-color: #FFFFFF;
+    box-shadow: -10px 10px #3784F9;
+    color: #3784F9;
+    border-color: #3784F9;
+    border-width: 3px;
 }
 
 /*Bottom Middle Section (Card Buttons)*/
 #card_buttons{
     padding-top: 2%;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 2%;
+    width: 100%;
 }
 
 .card_button_regular{
     align-self:center;
     background-color: #D9D9D9;
+    border-color: #D9D9D9;
 
     font-size: 36px;
     text-align: center;
 
     border-radius: 15px;
-    width: 250px;
+    width: 49%;
     height: 250px;
-    border-color: #D9D9D9;
-
     box-shadow: -10px 10px rgba(0, 0, 0, 0.233);
 
+    margin-top: 2%;
+
     cursor: pointer;
+
 }
 
 .card_button_regular:hover{
@@ -176,15 +270,59 @@
     border-width: 3px;
 }
 
+/* Bottom part of page with the links */
+.links{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    gap: 15%;
+
+    margin-top: 5%;
+}
+
+.link:hover{
+    cursor: pointer;
+}
+
 /* Desktop specific attribites*/
 @media (width >= 1280px){
 
-    
+    .hours_and_buttons{
+        flex-direction: column;
+    }
+
+    .hours_and_appointment_section{
+        flex-direction: column;
+    }
+
+    #card_buttons{
+        justify-content: space-between;
+    }
+
+    .card_button_regular{
+        width: 250px;
+        height: 250px;
+        justify-content: space-between;
+    }
+
+    .card_button_appointment{
+       width: 320px;
+       height: 100px;
+       border-radius: 50%;
+       box-shadow: 0px 6px rgba(0, 0, 0, 0.233);
+       margin-top: 20px;
+    }
+
+    .card_button_appointment:hover{
+        background-color: #FFFFFF;
+        box-shadow: 0px 6px #3784F9;
+        border-color: #3784F9;
+    }
 }
 
 /* Tablet specific attribites*/
 @media (width > 600px) and (width < 1280px){
-
 }
 
 
@@ -193,5 +331,13 @@
 
     .top_bar_menu{
         display: none;
+    }
+
+    .menu_icon{
+        display: flex;
+    }
+
+    .card_button_regular{
+        width: 100%
     }
   }   
